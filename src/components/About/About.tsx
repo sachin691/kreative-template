@@ -12,6 +12,24 @@ import Leadership from "./subComponents/Leadership";
 import Clients from "../../globalSubComponents/Clients";
 import CTA from "../../globalSubComponents/CTA";
 
+
+const content = {
+  introNormal: " About ",
+  introRed: "Us ",
+  caption:
+    "Welcome to Kreative Machinez! Where innovation, creativity, and cutting-edge technology converge to shape your brand's digital narrative.",
+};
+
+const ctaContent1 = {
+  text1: "Want To Boost Your Online Presence ?",
+  text2: "Call Us Now !",
+};
+
+const ctaContent2 = {
+  text1: "Maximize Your Impact & Get Noticed Now !",
+  text2: "Email Us.",
+};
+
 const About = () => {
   const dispatch = useDispatch();
   dispatch(updateTab("About"));
@@ -24,30 +42,32 @@ const About = () => {
     emailoffset = 1650;
   }
 
+
+
   return (
     <div>
       <Intro
-        normalHead=" About "
-        redHead="Us "
-        caption="Welcome to Kreative Machinez! Where innovation, creativity, and cutting-edge technology converge to shape your brand's digital narrative."
+        normalHead={content.introNormal}
+        redHead={content.introRed}
+        caption={content.caption}
       />
       <AboutUs />
       <AboutWork />
       <CTA
-        text="Want To Boost Your Online Presence ?"
+        text={ctaContent1.text1}
         color="warning"
         showArrow={true}
-        text2="Call Us Now !"
+        text2={ctaContent1.text2}
         to="../Contact"
         offset={callOffset}
       />
       <Specialization />
       <Leadership />
       <CTA
-        text="Maximize Your Impact & Get Noticed Now !"
+        text={ctaContent2.text1}
         color="warning"
         showArrow={true}
-        text2="Email Us."
+        text2={ctaContent2.text2}
         to="../Contact"
         offset={emailoffset}
       />
